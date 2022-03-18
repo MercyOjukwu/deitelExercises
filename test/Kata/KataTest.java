@@ -3,6 +3,8 @@ package Kata;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+//import static sun.net.www.http.KeepAliveCache.result;
 
 
 public class KataTest {
@@ -105,6 +107,45 @@ public class KataTest {
             number = number + 2;
         }
 
+    }
+
+
+    @Test
+    public void isEvenTest(){
+
+        Kata number1 = new Kata();
+        boolean result = number1.isEven(5);
+        assertEquals(false,result);
+
+    }
+
+    @Test
+    public void isLargestNumber() {
+        Kata number = new Kata();
+        int result = number.isLargestNumber(3, 4, 5, 6, 8);
+        assertEquals(8, result);
+
+        /* Kata number2 = new Kata();
+        Kata number3 = new Kata();
+        Kata number4 = new Kata();
+        Kata number5 = new Kata(); */
+
+    }
+
+     @Test
+     public void noOfFactorsTest(){
+        Kata digit = new Kata();
+        int result = digit.noOfFactors(5);
+        assertEquals(2,result);
+
+
+    }
+
+    @Test
+    public void isPrimeTest(){
+        Kata prime = new Kata();
+        boolean result = prime.isPrime(111);
+        assertEquals(false, result );
     }
 
 }

@@ -23,15 +23,12 @@ public class AutomaticBike {
     }
 
     public void isOff(boolean myRide) {
-        if (myRide = false){
+        if (myRide = false) {
             isOn = false;
         }
 
 
-
-
     }
-
 
 
     public boolean getState() {
@@ -39,12 +36,10 @@ public class AutomaticBike {
     }
 
 
-
     public void acceleration(int myRide) {
-         myRide = 0;
-         while( myRide  < 21 ) {speed = myRide++ ; }
-        while( myRide < 21 && myRide < 31){speed = myRide + 2 ;}
-
+        if (myRide > 0 && myRide< 20) {
+            speed = myRide++;
+        }
 
 
     }
@@ -54,6 +49,10 @@ public class AutomaticBike {
         }
 
 
+    /* public void accelerateTwice(int myRide) {
+        myRide = 0;
+        do {speed = myRide += 2 ;} while(  myRide < 31);
+    } */
+ }
 
 
-}

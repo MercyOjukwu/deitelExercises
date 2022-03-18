@@ -68,6 +68,86 @@ public class Kata {
 
 
     }
-        public int getResult() {return result2;}
+
+    public int getResult() {
+        return result2;
+    }
+
+    public boolean isEven(int number1) {
+
+        if (number1 % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public int isLargestNumber(int number, int number2, int number3, int number4, int number5) {
+
+        // number = 1;  number2 = 2 ;  number3 = 3 ;  number4 = 4;  number5 = 5;
+
+
+        if (number > number2 && number > number3 && number > number4 && number > number5) {
+            return number;
+        }
+
+        if (number2 > number && number2 > number3 && number2 > number4 && number2 > number5) {
+            return number2;
+        }
+        if (number3 > number && number3 > number2 && number3 > number4 && number3 > number5) {
+            return number3;
+        }
+
+        if (number4 > number && number4 > number3 && number4 > number2 && number4 > number5) {
+            return number4;
+        }
+
+        if (number5 > number && number5 > number2 && number5 > number3 && number5 > number4) {
+            return number5;
+        }
+
+        return number;
+    }
+
+
+    public int noOfFactors(int digit) {
+        int number, count = 0;
+        for (number = 1; number <= digit; number++) {
+            if (digit % number == 0)
+                count++;
+        }
+
+        return count;
+
+    }
+
+
+    public boolean isPrime(int prime) {
+        int number, count = 0;
+        for (number = 1; number <= prime; number++) {
+            if (prime % number == 0)
+                count++;
+            }
+        if (count <= 2) {
+            return true;
+            } else {
+                return false;
+            }
+    }
+
+
+
 
 }
+
+
+
+
+   /*  public boolean getResponse() {
+        return response;
+    } */
+
+
+
+
+
