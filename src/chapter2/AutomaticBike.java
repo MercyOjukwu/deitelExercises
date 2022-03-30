@@ -37,22 +37,28 @@ public class AutomaticBike {
 
 
     public void acceleration(int myRide) {
-        if (myRide > 0 && myRide< 20) {
-            speed = myRide++;
-        }
+        if (myRide > 0 && myRide < 20) {speed = myRide+ 1;}
+        if (myRide > 20 && myRide < 31){ speed = myRide + 2;}
+        if (myRide > 31 && myRide < 41){ speed = myRide + 3;}
+        if (myRide > 41){speed = myRide + 4;}
 
 
     }
+
+
+
 
         public int getSpeed () {
             return speed;
         }
 
 
-    /* public void accelerateTwice(int myRide) {
-        myRide = 0;
-        do {speed = myRide += 2 ;} while(  myRide < 31);
-    } */
- }
+    public void decceleration(int myRide) {
+        if (myRide > 0 && myRide < 20) {speed = myRide - 1;}
+        if (myRide > 20 && myRide < 31){ speed = myRide -  2;}
+        if (myRide > 31 && myRide < 41){ speed = myRide - 3;}
+        if (myRide > 41){speed = myRide - 4;}
+    }
+}
 
 

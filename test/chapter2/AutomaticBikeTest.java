@@ -38,5 +38,55 @@ public class AutomaticBikeTest {
         assertEquals(28, myRide.getSpeed());
     }
 
+    @Test
+    public void thirdAccelerationTest() {
+        AutomaticBike myRide = new AutomaticBike();
+        myRide.isOn(true);
+        myRide.acceleration(33);
+        assertEquals(36, myRide.getSpeed());
+    }
+
+    @Test
+    public void fourthAccelerationTest() {
+        AutomaticBike myRide = new AutomaticBike();
+        myRide.isOn(true);
+        myRide.acceleration(42);
+        assertEquals(46, myRide.getSpeed());
+    }
+
+    @Test
+    public void firstDeccelerationTest() {
+        AutomaticBike myRide = new AutomaticBike();
+        myRide.isOn(true);
+        myRide.decceleration(11);
+        assertEquals(10, myRide.getSpeed());
+    }
+
+
+    @Test
+    public void secondDeccelerationTest() {
+        AutomaticBike myRide = new AutomaticBike();
+        myRide.isOn(true);
+        myRide.decceleration(28);
+        assertEquals(26, myRide.getSpeed());
+    }
+
+    @Test
+    public void thirdDeccelerationTest() {
+        AutomaticBike myRide = new AutomaticBike();
+        myRide.isOn(true);
+        myRide.decceleration(38);
+        assertEquals(35, myRide.getSpeed());
+    }
+
+    @Test
+    public void fourthDeccelerationTest() {
+        AutomaticBike myRide = new AutomaticBike();
+        myRide.isOn(true);
+        myRide.decceleration(50);
+        assertEquals(46, myRide.getSpeed());
+    }
+
+
 
 }

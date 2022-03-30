@@ -123,20 +123,27 @@ public class Kata {
 
 
     public boolean isPrime(int prime) {
-        int number, count = 0;
-        for (number = 1; number <= prime; number++) {
-            if (prime % number == 0)
-                count++;
-            }
-        if (count <= 2) {
-            return true;
-            } else {
-                return false;
-            }
+//        int number, count = 0;
+//        for (number = 1; number <= prime; number++) {
+//            if (prime % number == 0)
+//                count++;
+//            }
+//        if (count <= 2) {
+//            return true;
+//            } else {
+//                return false;
+//            }
+        return noOfFactors(prime) <= 2;
+
     }
 
 
-
+   /*  public int displayAsteriks(int figure) {
+        while (figure <= 30) {
+            System.out.println("*");
+        }
+        return figure;
+    } */
 
 }
 

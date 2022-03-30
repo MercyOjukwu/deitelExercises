@@ -144,10 +144,21 @@ public class KataTest {
     @Test
     public void isPrimeTest(){
         Kata prime = new Kata();
-        boolean result = prime.isPrime(111);
-        assertEquals(false, result );
+        boolean result = prime.isPrime(7);
+        assertEquals(true, result );
     }
 
+
+    
+    /*  @Test
+    public void displayAsteriks(){
+        Kata figure = new Kata();
+        int result = figure.displayAsteriks(5);
+        assertEquals("*****",result );
+    }
+
+
+     */
 }
 
 
