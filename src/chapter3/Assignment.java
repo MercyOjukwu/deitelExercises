@@ -1,4 +1,4 @@
-package tddClass;
+package chapter3;
 import java.util.Scanner;
 public class Assignment {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package timeConverter;
+package chapter2;
 
 import java.util.Scanner;
 

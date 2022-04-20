@@ -7,14 +7,6 @@ public class NokiaPhone {
         Scanner input = new Scanner(System.in);
 
 
-        System.out.println(" ");
-        int digit = input.nextInt();
-        for (int number = 1; number <= 1; number++) {
-            switch (number) {
-                case 1:
-                    System.out.println("List of menu functions:\n  1.Phone book\n  2.Messages\n  3.Chat\n  4.Call register\n ");
-            }
-
             System.out.println();
             int firstEntry = input.nextInt();
 
@@ -109,16 +101,17 @@ public class NokiaPhone {
 
                         System.out.println(" ");
                         int figure6 = input.nextInt();
-                        for (int number10 = 6; number10 <= 6 ; number10++){
-                            switch(number10){
+                        for (int number10 = 6; number10 <= 6; number10++) {
+                            switch (number10) {
                                 case 6:
-                                    System.out.println("    1.Last call cost\n    2.All cost costs\n    3.Clear counters\n");}
+                                    System.out.println("    1.Last call cost\n    2.All cost costs\n    3.Clear counters\n");
+                            }
                         }
 
                         System.out.println(" ");
                         int figure7 = input.nextInt();
-                        for(int number11 = 7; number11 <= 7;number11++){
-                            switch(number11){
+                        for (int number11 = 7; number11 <= 7; number11++) {
+                            switch (number11) {
                                 case 7:
                                     System.out.println("    1.Call cost limit\n   2.Sow costs in\n");
                             }
@@ -132,10 +125,23 @@ public class NokiaPhone {
 
         }
 
+
+
+    public String openMainMenu(int userInput) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println(" ");
+        int digit = input.nextInt();
+        for (int number = 1; number <= 1; number++) {
+            switch (number) {
+                case 1:
+                   return "List of menu functions:\n  1.Phone book\n  2.Messages\n  3.Chat\n  4.Call register\n ";
+            }
+        }
+
+        return null;
     }
-
 }
-
 
 
 

@@ -1,4 +1,4 @@
-package tddClass;
+package chapter3;
 
 import org.junit.jupiter.api.Test;
 
