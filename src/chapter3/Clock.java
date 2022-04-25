@@ -29,11 +29,5 @@ public class Clock {
         return time;
     }
 
-//    public static void setTime(int hour, int minute, int second) {
-//        Clock.hour = hour;
-//        Clock.minute = minute;
-//        Clock.second = second;
-//        hour = 1; minute = 40; second = 10;
-//
-//    }
+
 }
