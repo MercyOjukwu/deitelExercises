@@ -1,4 +1,4 @@
-package chapter10.CodeForAnimal;
+package chapter10;
 
 public class Animal {
     public void move(){
