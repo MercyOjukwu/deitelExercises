@@ -12,7 +12,7 @@ public class Factorial {
         for (i = 1; i <= number; i++) {
             fact = fact * i;
         }
-            System.out.println("The factorial of the number is : " +fact);
+            System.out.println("The factorial of " +number+ " is : " +fact);
 
     }
 }
