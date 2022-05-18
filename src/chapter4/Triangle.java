@@ -1,12 +1,9 @@
 package chapter4;
-import java.util.*;
+//import java.util.*;
 
 public class Triangle {
     public static void main(String[] args) {
-        printFirstTriangle() ;
-        printSecondTriangle();
     }
-
 
 
     private static void printFirstTriangle() {
@@ -25,12 +22,14 @@ public class Triangle {
 
     private static void printSecondTriangle() {
         int rows = 0;
-        for ( int i = 6; i >= rows; i--) {
-            for(int y = 6; y >= i; y--){
+        for (int i = 6; i >= rows; i--) {
+            for (int y = 6; y >= i; y--) {
                 System.out.print("* ");
             }
             System.out.println("");
 
         }
+
     }
+
 }
