@@ -53,25 +53,6 @@ public class AccountTest {
 
     }
 
-    @Test
-    public void withdrawLargerAmount() {
-
-        funmiAccount.deposit(1000);
-        funmiAccount.withdrawLargerAmount(2500);
-        assertEquals(1000, funmiAccount.getBalance());
-
-    }
-
-
-    @Test
-    public void withdrawNegativeValue() {
-
-        funmiAccount.deposit(1000);
-        funmiAccount.withdrawNegativeValue(-500);
-        assertEquals(1000, funmiAccount.getBalance());
-
-
-    }
 
 
 

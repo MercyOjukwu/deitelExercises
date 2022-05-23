@@ -1,66 +1,56 @@
 package chapter3;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class AirConditionerTest {
+    AirConditioner airCondition;
+
+    @BeforeEach
+    public void beginEachTestWith(){
+        airCondition = new AirConditioner();
+    }
 
     @Test
     public void powerOn(){
-
-    //given
-    AirConditioner airCondition = new AirConditioner();
-
-    //when
-    airCondition.powerOn(true);
-
-    //assert
-    assertEquals(true, airCondition.getPower());
-
-
-
-
-
-}
-    @Test
-    public void powerOff(){
-
-        AirConditioner airCondition = new AirConditioner();
-        airCondition.powerOff(false);
-        assertEquals(false, airCondition.getPower());
+        airCondition.powerOn();
+        assertTrue(airCondition.getPower());
     }
 
-
+    @Test
+    public void powerOff(){
+        airCondition.powerOff();
+        assertFalse(airCondition.getPower());
+    }
 
     @Test
     public void increaseTemperature(){
-        AirConditioner airCondition = new AirConditioner();
-        airCondition.increaseTemperature(28);
-        assertEquals(28, airCondition.getThermostat());
+        airCondition.powerOn();
+        airCondition.increaseTemperature(1);
+        assertEquals(17, airCondition.getTemperature());
     }
 
    @Test
-    public void decreaseTemperature(){
-        AirConditioner airCondition = new AirConditioner();
-        airCondition.decreaseTemperature(17);
-        assertEquals(17, airCondition.getThermostat());
+    public void decreaseTemperature(){  
+       airCondition.increaseTemperature(1);
+       airCondition.increaseTemperature(1);
+       airCondition.decreaseTemperature(1);
+        assertEquals(17, airCondition.getTemperature());
    }
-
 
    @Test
     public void increaseTemperatureBeyondThirty(){
-        AirConditioner airCondition = new AirConditioner();
-        airCondition.increaseTemperatureBeyondThirty(31);
-        assertEquals(30, airCondition.getThermostat());
+        airCondition.increaseTemperature(15);
+       assertEquals(30, airCondition.getTemperature());
    }
    
    @Test
     public void decreaseTemperatureBelowSixteen(){
-        AirConditioner airCondition = new AirConditioner();
-        airCondition.decreaseTemperatureBelowSixteen(15);
-        assertEquals(16, airCondition.getThermostat());
+        airCondition.decreaseTemperature(15);
+        assertEquals(16, airCondition.getTemperature());
    }
 
 

@@ -6,11 +6,7 @@ public class Television {
     private int volume;
     private boolean mute;
 
-    public void powerOn(boolean shinko) {
-
-        if (shinko = true) {
-            shinko = true;
-        }
+    public void powerOn() {
         power = true;
     }
 
@@ -18,43 +14,28 @@ public class Television {
         return power;
     }
 
-    public void powerOff(boolean shinko) {
-        if (shinko = false){
-            shinko = false;
-        }
+    public void powerOff() {
         power = false;
     }
 
-    public void increaseVolume(int shinko) {
-        if (shinko == 0){
-            shinko = 0 + 1;
-        }
-        volume = shinko;
+    public void increaseVolume(int incrementBy) {
+       if (incrementBy > 0) volume = incrementBy;
     }
 
     public int getVolume() {
         return volume;
     }
 
-    public void decreaseVolume(int shinko) {
-        if (shinko == 1 ){
-            shinko = 1-1;
-        }
-        volume = shinko;
+    public void decreaseVolume(int decrementBy) {
+       if(decrementBy > 0) volume -= decrementBy;
     }
 
-    public void muteVolume(boolean shinko) {
-        if (shinko = false) {
-            shinko = false;
-        }
-        mute = shinko;
+    public void muteVolume() {
+        mute = false;
     }
 
-    public void unmuteVolume(boolean shinko) {
-        if (shinko = true) {
-            shinko = true;
-        }
-        mute = shinko;
+    public void unmuteVolume() {
+        mute = true;
     }
 
     public boolean getState() {

@@ -44,8 +44,22 @@ public class TurtleTest {
         assertSame(WEST, tote.getCurrentDirection());
     }
 
-//
+    @Test public void turtleCanMoveRightFromWestTest(){
+        tote.turnRight();
+        tote.turnRight();
+        tote.turnRight();
+        assertSame(NORTH, tote.getCurrentDirection());
 
+    }
+
+    @Test public void turtleCanMoveRightFromNorthTest(){
+        tote.turnRight();
+        tote.turnRight();
+        tote.turnRight();
+        tote.turnRight();
+        assertSame(SOUTH, tote.getCurrentDirection());
+
+    }
     @Test public void turtleCanTurnLeftWhileFacingEastTest(){
         tote.turnLeft();
         assertSame(NORTH, tote.getCurrentDirection());
@@ -57,12 +71,20 @@ public class TurtleTest {
         assertSame(WEST, tote.getCurrentDirection());
     }
 
-//    @Test public void turtleCanMoveLeftFromWestTest(){
-//        tote.turnLeft();
-//        tote.turnLeft();
-//        tote.turnLeft();
-//        assertSame(SOUTH, tote.getCurrentDirection());
-//    }
+    @Test public void turtleCanMoveLeftFromWestTest(){
+        tote.turnLeft();
+        tote.turnLeft();
+        tote.turnLeft();
+        assertSame(SOUTH, tote.getCurrentDirection());
+    }
+
+    @Test public void turtleCanMoveLeftFromSouthTest(){
+        tote.turnLeft();
+        tote.turnLeft();
+        tote.turnLeft();
+        tote.turnLeft();
+        assertSame(NORTH, tote.getCurrentDirection());
+    }
 
     @Test public void turtleCanMoveForwardFacingEastTest(){
         tote.move(5);

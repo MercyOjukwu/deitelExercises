@@ -3,59 +3,32 @@ package chapter3;
 public class AirConditioner {
 
     private boolean power;
-    private int thermostat;
-    public void powerOn(boolean airCondition) {
+    private int temperature = 16;
 
-        if (airCondition = true) {
-            airCondition = true;
-        }
+    public void powerOn() {
       power = true;
     }
 
     public boolean getPower(){
-
         return power;
     }
 
-    public void powerOff(boolean airCondition) {
-        if(airCondition = false){
-            airCondition = false;
-        }
+    public void powerOff() {
         power = false;
     }
 
-    public void increaseTemperature(int airCondition) {
-        if (airCondition > 30){
-            airCondition = 30;
-
-        }
-        thermostat = 28;
+    public void increaseTemperature(int incrementBy) {
+        temperature += incrementBy;
+        if(temperature > 30) temperature = 30;
     }
 
-    public int getThermostat() {
-        return thermostat;
+    public int getTemperature() {
+        return temperature;
     }
 
-
-    public void decreaseTemperature(int airCondition) {
-        if(airCondition < 16){
-            airCondition = 16;
-        }
-        thermostat = 17;
+    public void decreaseTemperature(int decrementBy) {
+        temperature -= decrementBy;
+        if(temperature < 16) temperature = 16;
     }
 
-    public void increaseTemperatureBeyondThirty(int airCondition) {
-        if(airCondition > 30){
-            airCondition = 30;
-        }
-        thermostat = 30;
-    }
-
-    public void decreaseTemperatureBelowSixteen(int airCondition) {
-        if(airCondition < 16){
-            airCondition = 16;
-        }
-        thermostat = 16;
-
-    }
 }

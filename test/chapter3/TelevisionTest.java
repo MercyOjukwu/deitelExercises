@@ -1,65 +1,53 @@
 package chapter3;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TelevisionTest {
 
+   Television shinko;
+   @BeforeEach
+   public void beginEachTestWith(){
+      shinko = new Television();
+   }
 
    @Test
    public void powerOn(){
-
-   //given
-   Television shinko = new Television();
-
-   //when
-   shinko.powerOn(true);
-
-   //assert
-    assertEquals(true, shinko.getPower());
-
+    shinko.powerOn();
+    assertTrue((Boolean) shinko.getPower());
    }
 
    @Test
    public void powerOff(){
-   Television shinko = new Television();
-   shinko.powerOff(false);
-   assertEquals(false, shinko.getPower());
+   shinko.powerOff();
+   assertFalse((Boolean) shinko.getPower());
    }
-
-
 
    @Test
    public void increaseVolume(){
-      Television shinko = new Television();
-      shinko.increaseVolume(0);
+      shinko.increaseVolume(1);
       assertEquals(1, shinko.getVolume());
    }
 
-
    @Test
    public void decreaseVolume(){
-      Television shinko = new Television();
+      shinko.increaseVolume(2);
       shinko.decreaseVolume(1);
-      assertEquals(0, shinko.getVolume());
+      assertEquals(1, shinko.getVolume());
    }
-
 
    @Test
    public void muteVolume(){
-      Television shinko = new Television();
-      shinko.muteVolume(false);
-      assertEquals(false, shinko.getState());
+      shinko.muteVolume();
+      assertFalse(shinko.getState());
    }
-
 
    @Test
    public void unmuteVolume(){
-      Television shinko = new Television();
-      shinko.unmuteVolume(true);
-      assertEquals(true, shinko.getState());
+      shinko.unmuteVolume();
+      assertTrue(shinko.getState());
    }
 }
 
