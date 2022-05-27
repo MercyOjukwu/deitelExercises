@@ -27,16 +27,16 @@ public class Turtle {
 
     public void turnRight() {
         if(currentDirection == NORTH) face(EAST);
-        if(currentDirection == WEST) face(NORTH);
-        if(currentDirection == SOUTH) face(WEST);
-        if(currentDirection == EAST) face(SOUTH);
+        else if(currentDirection == WEST) face(NORTH);
+        else if(currentDirection == SOUTH) face(WEST);
+        else face(SOUTH);
     }
 
     public void turnLeft() {
         if(currentDirection == SOUTH) face(EAST);
-        if(currentDirection == WEST) face(SOUTH);
-        if(currentDirection == NORTH) face(WEST);
-        if(currentDirection == EAST) face(NORTH);
+        else if (currentDirection == WEST) face(SOUTH);
+        else if(currentDirection == NORTH) face(WEST);
+        else  face(NORTH);
     }
 
     private void face(Direction newDirection) {

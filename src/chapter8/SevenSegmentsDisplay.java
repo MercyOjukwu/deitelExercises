@@ -8,7 +8,7 @@ public class SevenSegmentsDisplay {
     static int[][] board = new int[5][4];
 
     public static void main(String[] args) {
-        setValue("11110111");
+        setValue("10110011");
         display();
     }
 

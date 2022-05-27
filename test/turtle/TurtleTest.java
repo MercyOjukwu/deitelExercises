@@ -8,9 +8,10 @@ import static turtle.Direction.*;
 
 public class TurtleTest {
     private Turtle tote;
-
+    SketchPad sketchPad;
     @BeforeEach public void beginEachTestWith(){
         tote = new Turtle();
+        sketchPad = new SketchPad(5,5);
     }
 
     @Test public void turtleHasPenTest(){
@@ -57,7 +58,7 @@ public class TurtleTest {
         tote.turnRight();
         tote.turnRight();
         tote.turnRight();
-        assertSame(SOUTH, tote.getCurrentDirection());
+        assertSame(EAST, tote.getCurrentDirection());
 
     }
     @Test public void turtleCanTurnLeftWhileFacingEastTest(){
@@ -83,11 +84,23 @@ public class TurtleTest {
         tote.turnLeft();
         tote.turnLeft();
         tote.turnLeft();
-        assertSame(NORTH, tote.getCurrentDirection());
+        assertSame(EAST, tote.getCurrentDirection());
     }
 
-    @Test public void turtleCanMoveForwardFacingEastTest(){
+    @Test public void turtleCanMoveTest(){
         tote.move(5);
         assertEquals(new Position(0, 4), tote.getCurrentPosition());
+    }
+
+    @Test public void turtleCanMoveForwardFacingEast(){
+        tote.move(3);
+        assertEquals(new Position(0,2), tote.getCurrentPosition());
+        tote.move(2);
+        assertEquals(new Position(0,1), tote.getCurrentPosition());
+    }
+
+    @Test public void turtleWritesFacingEastTest(){
+//        tote.move(5, sketchPad);
+
     }
 }
