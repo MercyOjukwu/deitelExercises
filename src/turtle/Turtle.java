@@ -16,7 +16,6 @@ public class Turtle {
         bik.penDown();
     }
 
-
     public void penUp() {
         bik.penUp();
     }
@@ -43,12 +42,43 @@ public class Turtle {
         currentDirection = newDirection;
     }
 
-    public void move(int noOfSteps) {
+    public void move(int noOfSteps, SketchPad sketchPad) {
         this.numberOfSteps = noOfSteps;
     }
 
     public Position getCurrentPosition() {
         return new Position(0, numberOfSteps - 1);
     }
+    private void writeOn(int noOfSteps, SketchPad sketchPad) {
+        if(currentDirection == EAST) writeOnColumn(noOfSteps, sketchPad);
+    }
+
+    private void writeOnColumn(int noOfSteps, SketchPad sketchPad) {
+        int[][] floor = sketchPad.getFloor();
+        int row = currentPosition.getRow();
+        int column = currentPosition.getColumn();
+        for (int i = column; i < column+noOfSteps; i++) {
+            floor[row][i] = 1;
+        }
+    }
+
+//	private void decreaseRowBy(int noOfSteps) {
+//		int currentRowPosition = currentPosition.getRow();
+//		currentPosition.setRow(currentRowPosition - noOfSteps -1);
+//	}
+
+
+    private void increaseRowBy(int noOfSteps) {
+        int currentRowPosition = currentPosition.getRow();
+        currentPosition.setRow(currentRowPosition + noOfSteps -1);
+    }
+
+    private void increaseColumnBy(int noOfSteps) {
+        int currentColumnPosition= currentPosition.getColumn();
+        currentPosition.setColumn(currentColumnPosition+noOfSteps-1);
+    }
+//    public Position getCurrentPosition() {
+//        return currentPosition;
+//    }
 }
  

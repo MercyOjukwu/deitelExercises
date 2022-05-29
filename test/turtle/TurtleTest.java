@@ -88,19 +88,50 @@ public class TurtleTest {
     }
 
     @Test public void turtleCanMoveTest(){
-        tote.move(5);
+        tote.move(5, sketchPad);
         assertEquals(new Position(0, 4), tote.getCurrentPosition());
     }
 
     @Test public void turtleCanMoveForwardFacingEast(){
-        tote.move(3);
+        tote.move(3, sketchPad);
         assertEquals(new Position(0,2), tote.getCurrentPosition());
-        tote.move(2);
+        tote.move(2,sketchPad);
         assertEquals(new Position(0,1), tote.getCurrentPosition());
     }
 
-    @Test public void turtleWritesFacingEastTest(){
-//        tote.move(5, sketchPad);
+    @Test public void turtleCanMoveForwardFacingSouthTest(){
+        tote.move(8, sketchPad);
+        assertEquals(new Position(0,7), tote.getCurrentPosition());
 
     }
+
+    @Test public void turtleCanMoveForwardFacingWestTest(){
+        tote.move(12, sketchPad);
+        assertEquals(new Position(0, 11), tote.getCurrentPosition());
+    }
+
+    @Test public void turtleCanMoveForwardFacingNorthTest(){
+        tote.move(18, sketchPad);
+        assertEquals(new Position(0, 17), tote.getCurrentPosition());
+    }
+
+    @Test public void turtleWritesFacingEastTest(){
+        tote.move(5, sketchPad);
+
+    }
+
+//    @Test
+//    public void whenPenIsDDown_turtleWritesFacingEastTest(){
+//        tote.penDown();
+//        SketchPad sketchPad = new SketchPad(5,5);
+//        tote.move(5, sketchPad);
+//        String expected = """
+//				* * * * *
+//
+//
+//
+//
+//				""";
+//        assertEquals(expected, sketchPad.toString());
+//    }
 }

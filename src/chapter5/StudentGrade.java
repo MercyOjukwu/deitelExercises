@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class StudentGrade {
     static Scanner input = new Scanner(System.in);
-    private static int grade = input.nextInt();
     private static int aCount = 0;
     private static int bCount = 0;
     private static int cCount = 0;
@@ -18,8 +17,11 @@ public class StudentGrade {
 
 
     public static void takeInUserInput() {
-        int gradeCounter = 0;
+        System.out.println("Enter number of students: ");
+        int noOfStudents = input.nextInt();
 
+        int gradeCounter = 0;
+        for (int i = 0; i < noOfStudents; i++) {
             System.out.println("Enter grade");
             int grade = input.nextInt();
             ++gradeCounter;
@@ -41,7 +43,7 @@ public class StudentGrade {
                     ++fCount;
             }
         }
-
+    }
 
     public static void printOutResults(){
         System.out.printf("%nGrade Report:%n");

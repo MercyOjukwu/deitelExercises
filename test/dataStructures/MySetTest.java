@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MySetTest {
 
-    MyArrayList mySet;
+    MySet mySet;
     @BeforeEach public void beginEachTestWith(){
-        mySet = new MyArrayList();
+        mySet = new MySet();
     }
 
     @Test public void canAddToSet(){

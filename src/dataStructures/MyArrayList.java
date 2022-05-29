@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class MyArrayList extends ArrayList {
+public class MyArrayList extends ArrayList{
     HashMap<String,String> map = new HashMap<>();
     private int index;
     String[] array;
@@ -24,7 +24,7 @@ public class MyArrayList extends ArrayList {
 
     public void addMultipleElementsToList(String... elements) {
         array = elements;
-        System.out.println(Arrays.toString(array));
+//        System.out.println(Arrays.toString(array));
         for(index = 0; index < array.length; index++){
           if (map.containsKey(array[index])) return;
           map.put(array[index], elements[index]);
