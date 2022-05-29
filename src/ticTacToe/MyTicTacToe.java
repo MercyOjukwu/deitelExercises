@@ -1,14 +1,13 @@
 package ticTacToe;
 import java.util.*;
 
-
 public class MyTicTacToe {
+
     static String[] board;
     static String turn;
 
-
     public static void main(String[] args) {
-        playGame();
+        startGame();
     }
     static String checkWinner() {
         for (int a = 0; a < 8; a++) {
@@ -37,9 +36,10 @@ public class MyTicTacToe {
 
         }
 
-        System.out.println(turn + " enter a slot number to place " + turn + " in:");
+        System.out.println(turn + "'s turn; enter a slot number to place " + turn + " in:");
         return null;
     }
+
 
 
     static void printBoard() {
@@ -50,13 +50,12 @@ public class MyTicTacToe {
         System.out.println("| " + board[6] + " | " + board[7] + " | " + board[8] + " |");
     }
 
-    public static void playGame() {
+    public static void startGame() {
 
         Scanner in = new Scanner(System.in);
         board = new String[9];
         turn = "X";
         String winner = null;
-
 
         for (int a = 0; a < 9; a++) {
             board[a] = String.valueOf(a + 1);
@@ -69,38 +68,31 @@ public class MyTicTacToe {
         printBoard();
 
         System.out.println(
-                "Player one please enter a slot number to place X in: ");
+                "Player one please enter a slot number to place X in:");
 
         while (winner == null) {
             int numInput = 0;
             try {
                 numInput = in.nextInt();
 
-                if (!(numInput > 0 && numInput <= 9)) {
-                    System.out.println("Invalid input; re-enter slot number: ");
-                }
-                 if(numInput != in.nextInt()){
-                    System.out.println("Invalid input; re-enter slot number: ");
-                }
+                if (!(numInput > 0 && numInput <= 9))  {System.out.println("Invalid input; re-enter slot number:");
+                    continue;}
 
-            }catch (InputMismatchException e) {
-                System.out.println("Invalid input; Please restart game :)");
+            } catch (InputMismatchException e) {
+
+                System.out.println("Invalid input; please restart game :)");
                 break;
-
-            }catch (ArrayIndexOutOfBoundsException exception) {
-                System.out.println("Invalid input; re-enter slot number: ");
             }
-             catch (NullPointerException exception) {
-                System.out.println("hi hi :)");
+            catch(ArrayIndexOutOfBoundsException exception){
+                System.out.println("Invalid input; please enter slot number again:");
             }
-
             try {
                 if (board[numInput - 1].equals(
                         String.valueOf(numInput))) {
                     board[numInput - 1] = turn;
 
-                    if (turn.equals("X")) turn = "Player two";
-                    else turn = "Player one";
+                    if (turn.equals("X")) turn = "O";
+                    else turn = "X";
 
                     printBoard();
                     winner = checkWinner();
@@ -109,15 +101,18 @@ public class MyTicTacToe {
             catch(ArrayIndexOutOfBoundsException exception){
                 System.out.println();
             }
-            catch (NullPointerException exception) {
-                if (winner.equalsIgnoreCase("draw")) System.out.println("It's a draw! Play again :)");
-
-                else System.out.println("Congratulations! " + winner + " Thanks for playing :)");
-            }
         }
 
+
+        if (winner != null) {
+            if (winner.equalsIgnoreCase("draw")) System.out.println("It's a draw! Play again :)");
+
+            else System.out.println("Congratulations! " + winner + " Thanks for playing :)");
+        }
 
     }
 
 
 }
+
+
