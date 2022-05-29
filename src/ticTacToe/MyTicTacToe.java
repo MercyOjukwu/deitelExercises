@@ -1,11 +1,15 @@
 package ticTacToe;
 import java.util.*;
 
-public class MyTicTacToe {
 
+public class MyTicTacToe {
     static String[] board;
     static String turn;
 
+
+    public static void main(String[] args) {
+        playGame();
+    }
     static String checkWinner() {
         for (int a = 0; a < 8; a++) {
             String line = switch (a) {
@@ -33,12 +37,9 @@ public class MyTicTacToe {
 
         }
 
-        System.out.println(turn + "'s turn; enter a slot number to place " + turn + " in:");
+        System.out.println(turn + " enter a slot number to place " + turn + " in:");
         return null;
     }
-
-
-    // To print out the board.
 
 
     static void printBoard() {
@@ -49,14 +50,13 @@ public class MyTicTacToe {
         System.out.println("| " + board[6] + " | " + board[7] + " | " + board[8] + " |");
     }
 
-    public static void main(String[] args) {
-//        startGame();
-//        printBoard();
-//        checkWinner();
+    public static void playGame() {
+
         Scanner in = new Scanner(System.in);
         board = new String[9];
         turn = "X";
         String winner = null;
+
 
         for (int a = 0; a < 9; a++) {
             board[a] = String.valueOf(a + 1);
@@ -69,106 +69,55 @@ public class MyTicTacToe {
         printBoard();
 
         System.out.println(
-                "Player one please enter a slot number to place X in:");
+                "Player one please enter a slot number to place X in: ");
 
         while (winner == null) {
-            int numInput;
-//
+            int numInput = 0;
             try {
                 numInput = in.nextInt();
-//                if (!(numInput > 0 && numInput <= 9))  {System.out.println("Invalid input; re-enter slot number:");
-//                    continue;}
 
-            } catch (InputMismatchException e) {
+                if (!(numInput > 0 && numInput <= 9)) {
+                    System.out.println("Invalid input; re-enter slot number: ");
+                }
+                 if(numInput != in.nextInt()){
+                    System.out.println("Invalid input; re-enter slot number: ");
+                }
 
-                System.out.println("Invalid input; please enter slot number again: ");
-                continue;
+            }catch (InputMismatchException e) {
+                System.out.println("Invalid input; Please restart game :)");
+                break;
+
+            }catch (ArrayIndexOutOfBoundsException exception) {
+                System.out.println("Invalid input; re-enter slot number: ");
+            }
+             catch (NullPointerException exception) {
+                System.out.println("hi hi :)");
             }
 
-            if (board[numInput - 1].equals(
-                    String.valueOf(numInput))) {
-                board[numInput - 1] = turn;
+            try {
+                if (board[numInput - 1].equals(
+                        String.valueOf(numInput))) {
+                    board[numInput - 1] = turn;
 
-                if (turn.equals("X")) turn = "O";
-                else turn = "X";
+                    if (turn.equals("X")) turn = "Player two";
+                    else turn = "Player one";
 
-                printBoard();
-                winner = checkWinner();
-            } else System.out.println("Slot already taken; re-enter slot number:");
+                    printBoard();
+                    winner = checkWinner();
+                } else System.out.println("Slot already taken; re-enter slot number:");
+            }
+            catch(ArrayIndexOutOfBoundsException exception){
+                System.out.println();
+            }
+            catch (NullPointerException exception) {
+                if (winner.equalsIgnoreCase("draw")) System.out.println("It's a draw! Play again :)");
+
+                else System.out.println("Congratulations! " + winner + " Thanks for playing :)");
+            }
         }
 
 
-        if (winner.equalsIgnoreCase("draw")) System.out.println("It's a draw! Play again :)");
-
-        else System.out.println("Congratulations! " + winner + " Thanks for playing :)");
-
     }
 
-//    public static void startGame() {
-//        Scanner in = new Scanner(System.in);
-//        board = new String[9];
-//        turn = "X";
-//        String winner = null;
-//
-//        for (int a = 0; a < 9; a++) {
-//            board[a] = String.valueOf(a + 1);
-//        }
-//
-//        System.out.println("*******************************");
-//        System.out.println("Welcome to my Tic-Tac-Toe :)");
-//        System.out.println("*******************************");
-//        System.out.println();
-//        printBoard();
-//
-//        System.out.println(
-//                "Player one please enter a slot number to place X in:");
-//
-//        while (winner == null) {
-//            int numInput;
-//
-//            try {
-//                numInput = in.nextInt();
-//                if (!(numInput > 0 && numInput <= 9)) {
-//                    System.out.println(
-//                            "Invalid input; re-enter slot number:");
-//                    continue;
-//                }
-//            } catch (InputMismatchException e) {
-//                System.out.println("Invalid input; please enter slot number again: ");
-//                continue;
-//            }
-//
-//
-//            if (board[numInput - 1].equals(
-//                    String.valueOf(numInput))) {
-//                board[numInput - 1] = turn;
-//
-//                if (turn.equals("X")) {
-//                    turn = "O";
-//                } else {
-//                    turn = "X";
-//                }
-//
-//                printBoard();
-//                winner = checkWinner();
-//            } else {
-//                System.out.println(
-//                        "Slot already taken; re-enter slot number:");
-//            }
-//        }
-//            if (winner.equalsIgnoreCase("draw")) {
-//                System.out.println(
-//                        "It's a draw! Play again :)");
-//            }
-//
-//            // For winner -to display Congratulations! message.
-//            else {
-//                System.out.println(
-//                        "Congratulations! " + winner + " Thanks for playing :)");
-//            }
-//        }
-//
 
 }
-
-
